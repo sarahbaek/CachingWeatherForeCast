@@ -49,8 +49,9 @@ namespace CachingWeatherForeCast.Controllers
 
             }
         }
-
-        public IEnumerable<WeatherForecast> CreateWeatherForecast()
+        // I have set this method to be private and it works. Try on your computer pls
+        // Apparently swagger has a little problem recognizing this method, since it has not [HttpGet] or somethin attribute.
+        private IEnumerable<WeatherForecast> CreateWeatherForecast()
         {
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
